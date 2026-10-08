@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sasha Lyyn · Links</title>
+  <title>Larissinha · Links</title>
   <meta name="description" content="💗 sua frase aqui · pronta pra você" />
   <meta name="theme-color" content="#200008" />
   <meta name="rating" content="adult" />
 
   <!-- Compartilhamento (WhatsApp / Telegram / Open Graph) — troque a URL pelo seu domínio -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Sasha Lyyn" />
-  <meta property="og:title" content="Sasha Lyyn 🔥 Links oficiais" />
+  <meta property="og:site_name" content="Larissinha" />
+  <meta property="og:title" content="Larissinha 🔥 Links oficiais" />
   <meta property="og:description" content="💗 sua frase aqui · pronta pra você" />
   <meta property="og:image" content="https://SEU-DOMINIO.com/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://SEU-DOMINIO.com/" />
   <meta property="og:locale" content="pt_BR" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sasha Lyyn 🔥 Links oficiais" />
+  <meta name="twitter:title" content="Larissinha 🔥 Links oficiais" />
   <meta name="twitter:description" content="💗 sua frase aqui · pronta pra você" />
   <meta name="twitter:image" content="https://SEU-DOMINIO.com/assets/og-image.jpg" />
 
@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/perfil.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/perfil.svg" fetchpriority="high" />
 
   <style>
     :root{
@@ -79,7 +79,7 @@
         0 30px 80px rgba(0,0,0,.65);
       display:flex;flex-direction:column;align-items:center;
       opacity:0;transform:translateY(18px) scale(.98);
-      animation:enter .8s cubic-bezier(.2,.8,.2,1) .05s forwards;
+      animation:enter .8s var(--t) .05s forwards;
     }
     @keyframes enter{to{opacity:1;transform:none}}
     .card > *{opacity:0;animation:rise .7s ease forwards}
@@ -247,11 +247,11 @@
     <span class="tag" id="tag">🔥 +18 · CONTEÚDO EXPLÍCITO</span>
 
     <div class="avatar">
-      <img id="photo" src="assets/perfil.webp" alt="Foto de perfil"
+      <img id="photo" src="assets/perfil.svg" alt="Foto de perfil"
            width="132" height="132" decoding="async" fetchpriority="high" />
     </div>
 
-    <h1 class="name" id="name">Sasha Lyyn</h1>
+    <h1 class="name" id="name">Larissinha</h1>
     <p class="bio" id="bio">💗 sua frase aqui · pronta pra você</p>
 
     <nav class="links" id="links" aria-label="Links"></nav>
@@ -264,18 +264,17 @@
        ⚙️ CONFIGURAÇÃO — edite tudo aqui
        ===================================================== */
     const CONFIG = {
-      nome: "Sasha Lyyn",
+      nome: "Larissinha",
       bio: "💗 sua frase aqui · pronta pra você",
       etiqueta: "🔥 +18 · CONTEÚDO EXPLÍCITO",
       // Coloque sua foto em /assets (ex.: perfil.webp, 400x400) e troque o caminho:
-      foto: "assets/perfil.webp",
-      fotoReserva: "assets/perfil.jpg", // usada se o navegador não suportar .webp
-      tituloAba: "Sasha Lyyn · Links",
+      foto: "assets/perfil.svg",
+      tituloAba: "Larissinha · Links",
 
       botoes: [
-        { tipo: "tg",  texto: "📲 MEU TELEGRAM · VEM",  url: "https://telegram.me/sashalyyn69194bot" },
-        { tipo: "vip", texto: "🔞 CONTEÚDO PROIBIDO",   url: "https://telegram.me/sashalyyn69194bot" },
-        { tipo: "hot", texto: "🔥 VÍDEOS QUENTES",      url: "https://telegram.me/sashalyyn69194bot" },
+        { tipo: "tg",  texto: "📲 MEU TELEGRAM · VEM",  url: "https://t.me/SEU_USUARIO" },
+        { tipo: "vip", texto: "🔞 CONTEÚDO PROIBIDO",   url: "https://SEU-LINK-EXCLUSIVO.com" },
+        { tipo: "hot", texto: "🔥 VÍDEOS QUENTES",      url: "https://SEU-LINK-DE-VIDEOS.com" },
       ],
 
       // Indicador de atividade: texto fixo/demonstrativo (não há contagem real).
@@ -303,7 +302,7 @@
     const img = $("photo");
     img.alt = "Foto de " + CONFIG.nome;
     img.src = CONFIG.foto;
-    img.onerror = () => { img.onerror = null; img.src = CONFIG.fotoReserva; };
+    img.onerror = () => { img.onerror = null; img.src = "assets/perfil.svg"; };
 
     const nav = $("links");
     CONFIG.botoes.forEach((b) => {
